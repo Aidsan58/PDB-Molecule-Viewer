@@ -1,0 +1,2 @@
+/usr/bin/ar qc libimgui.a CMakeFiles/imgui.dir/imgui/imgui-master/imgui.cpp.o CMakeFiles/imgui.dir/imgui/imgui-master/imgui_draw.cpp.o CMakeFiles/imgui.dir/imgui/imgui-master/imgui_tables.cpp.o CMakeFiles/imgui.dir/imgui/imgui-master/imgui_widgets.cpp.o
+/usr/bin/ranlib libimgui.a

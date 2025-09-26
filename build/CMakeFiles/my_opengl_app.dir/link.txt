@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/my_opengl_app.dir/src/main.cpp.o -o my_opengl_app  libglad.a glfw-build/src/libglfw3.a /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so /usr/lib/x86_64-linux-gnu/librt.a -lm -ldl 
+/usr/bin/c++ CMakeFiles/my_opengl_app.dir/src/main.cpp.o -o my_opengl_app  libglad.a glfw-build/src/libglfw3.a libimgui.a /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so /usr/lib/x86_64-linux-gnu/librt.a -lm -ldl 

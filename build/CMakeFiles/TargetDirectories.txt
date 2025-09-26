@@ -1,4 +1,5 @@
 /home/aidan/Code/Projects/opengl-project/build/CMakeFiles/glad.dir
+/home/aidan/Code/Projects/opengl-project/build/CMakeFiles/imgui.dir
 /home/aidan/Code/Projects/opengl-project/build/CMakeFiles/my_opengl_app.dir
 /home/aidan/Code/Projects/opengl-project/build/CMakeFiles/edit_cache.dir
 /home/aidan/Code/Projects/opengl-project/build/CMakeFiles/rebuild_cache.dir

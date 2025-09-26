@@ -175,6 +175,19 @@ glad/fast:
 .PHONY : glad/fast
 
 #=============================================================================
+# Target rules for targets named imgui
+
+# Build rule for target.
+imgui: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 imgui
+.PHONY : imgui
+
+# fast build rule for target.
+imgui/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/build
+.PHONY : imgui/fast
+
+#=============================================================================
 # Target rules for targets named my_opengl_app
 
 # Build rule for target.
@@ -225,6 +238,102 @@ update_mappings: cmake_check_build_system
 update_mappings/fast:
 	$(MAKE) $(MAKESILENT) -f glfw-build/src/CMakeFiles/update_mappings.dir/build.make glfw-build/src/CMakeFiles/update_mappings.dir/build
 .PHONY : update_mappings/fast
+
+imgui/imgui-master/imgui.o: imgui/imgui-master/imgui.cpp.o
+.PHONY : imgui/imgui-master/imgui.o
+
+# target to build an object file
+imgui/imgui-master/imgui.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/imgui/imgui-master/imgui.cpp.o
+.PHONY : imgui/imgui-master/imgui.cpp.o
+
+imgui/imgui-master/imgui.i: imgui/imgui-master/imgui.cpp.i
+.PHONY : imgui/imgui-master/imgui.i
+
+# target to preprocess a source file
+imgui/imgui-master/imgui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/imgui/imgui-master/imgui.cpp.i
+.PHONY : imgui/imgui-master/imgui.cpp.i
+
+imgui/imgui-master/imgui.s: imgui/imgui-master/imgui.cpp.s
+.PHONY : imgui/imgui-master/imgui.s
+
+# target to generate assembly for a file
+imgui/imgui-master/imgui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/imgui/imgui-master/imgui.cpp.s
+.PHONY : imgui/imgui-master/imgui.cpp.s
+
+imgui/imgui-master/imgui_draw.o: imgui/imgui-master/imgui_draw.cpp.o
+.PHONY : imgui/imgui-master/imgui_draw.o
+
+# target to build an object file
+imgui/imgui-master/imgui_draw.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/imgui/imgui-master/imgui_draw.cpp.o
+.PHONY : imgui/imgui-master/imgui_draw.cpp.o
+
+imgui/imgui-master/imgui_draw.i: imgui/imgui-master/imgui_draw.cpp.i
+.PHONY : imgui/imgui-master/imgui_draw.i
+
+# target to preprocess a source file
+imgui/imgui-master/imgui_draw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/imgui/imgui-master/imgui_draw.cpp.i
+.PHONY : imgui/imgui-master/imgui_draw.cpp.i
+
+imgui/imgui-master/imgui_draw.s: imgui/imgui-master/imgui_draw.cpp.s
+.PHONY : imgui/imgui-master/imgui_draw.s
+
+# target to generate assembly for a file
+imgui/imgui-master/imgui_draw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/imgui/imgui-master/imgui_draw.cpp.s
+.PHONY : imgui/imgui-master/imgui_draw.cpp.s
+
+imgui/imgui-master/imgui_tables.o: imgui/imgui-master/imgui_tables.cpp.o
+.PHONY : imgui/imgui-master/imgui_tables.o
+
+# target to build an object file
+imgui/imgui-master/imgui_tables.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/imgui/imgui-master/imgui_tables.cpp.o
+.PHONY : imgui/imgui-master/imgui_tables.cpp.o
+
+imgui/imgui-master/imgui_tables.i: imgui/imgui-master/imgui_tables.cpp.i
+.PHONY : imgui/imgui-master/imgui_tables.i
+
+# target to preprocess a source file
+imgui/imgui-master/imgui_tables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/imgui/imgui-master/imgui_tables.cpp.i
+.PHONY : imgui/imgui-master/imgui_tables.cpp.i
+
+imgui/imgui-master/imgui_tables.s: imgui/imgui-master/imgui_tables.cpp.s
+.PHONY : imgui/imgui-master/imgui_tables.s
+
+# target to generate assembly for a file
+imgui/imgui-master/imgui_tables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/imgui/imgui-master/imgui_tables.cpp.s
+.PHONY : imgui/imgui-master/imgui_tables.cpp.s
+
+imgui/imgui-master/imgui_widgets.o: imgui/imgui-master/imgui_widgets.cpp.o
+.PHONY : imgui/imgui-master/imgui_widgets.o
+
+# target to build an object file
+imgui/imgui-master/imgui_widgets.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/imgui/imgui-master/imgui_widgets.cpp.o
+.PHONY : imgui/imgui-master/imgui_widgets.cpp.o
+
+imgui/imgui-master/imgui_widgets.i: imgui/imgui-master/imgui_widgets.cpp.i
+.PHONY : imgui/imgui-master/imgui_widgets.i
+
+# target to preprocess a source file
+imgui/imgui-master/imgui_widgets.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/imgui/imgui-master/imgui_widgets.cpp.i
+.PHONY : imgui/imgui-master/imgui_widgets.cpp.i
+
+imgui/imgui-master/imgui_widgets.s: imgui/imgui-master/imgui_widgets.cpp.s
+.PHONY : imgui/imgui-master/imgui_widgets.s
+
+# target to generate assembly for a file
+imgui/imgui-master/imgui_widgets.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/imgui/imgui-master/imgui_widgets.cpp.s
+.PHONY : imgui/imgui-master/imgui_widgets.cpp.s
 
 src/glad.o: src/glad.c.o
 .PHONY : src/glad.o
@@ -290,7 +399,20 @@ help:
 	@echo "... update_mappings"
 	@echo "... glad"
 	@echo "... glfw"
+	@echo "... imgui"
 	@echo "... my_opengl_app"
+	@echo "... imgui/imgui-master/imgui.o"
+	@echo "... imgui/imgui-master/imgui.i"
+	@echo "... imgui/imgui-master/imgui.s"
+	@echo "... imgui/imgui-master/imgui_draw.o"
+	@echo "... imgui/imgui-master/imgui_draw.i"
+	@echo "... imgui/imgui-master/imgui_draw.s"
+	@echo "... imgui/imgui-master/imgui_tables.o"
+	@echo "... imgui/imgui-master/imgui_tables.i"
+	@echo "... imgui/imgui-master/imgui_tables.s"
+	@echo "... imgui/imgui-master/imgui_widgets.o"
+	@echo "... imgui/imgui-master/imgui_widgets.i"
+	@echo "... imgui/imgui-master/imgui_widgets.s"
 	@echo "... src/glad.o"
 	@echo "... src/glad.i"
 	@echo "... src/glad.s"

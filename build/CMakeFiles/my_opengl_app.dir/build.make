@@ -94,6 +94,7 @@ my_opengl_app: CMakeFiles/my_opengl_app.dir/src/main.cpp.o
 my_opengl_app: CMakeFiles/my_opengl_app.dir/build.make
 my_opengl_app: libglad.a
 my_opengl_app: glfw-build/src/libglfw3.a
+my_opengl_app: libimgui.a
 my_opengl_app: /usr/lib/x86_64-linux-gnu/libGLX.so
 my_opengl_app: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 my_opengl_app: /usr/lib/x86_64-linux-gnu/librt.a

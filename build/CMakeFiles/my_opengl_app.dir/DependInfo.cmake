@@ -15,6 +15,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/aidan/Code/Projects/opengl-project/build/CMakeFiles/glad.dir/DependInfo.cmake"
   "/home/aidan/Code/Projects/opengl-project/build/glfw-build/src/CMakeFiles/glfw.dir/DependInfo.cmake"
+  "/home/aidan/Code/Projects/opengl-project/build/CMakeFiles/imgui.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

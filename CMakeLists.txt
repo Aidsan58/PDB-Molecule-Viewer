@@ -9,9 +9,18 @@ target_include_directories(glad PUBLIC include)
 # Replace with correct path to GLFW source
 add_subdirectory("/home/aidan/Programs/GLFW/glfw-3.4" "${CMAKE_BINARY_DIR}/glfw-build")
 
-# Find Dear ImGUI
-add_subdirectory("imgui/imgui-master")
-add_subdirectory("imgui/imgui-master/backends")
+# Add Dear Imgui
+set(IMGUI_DIR ${CMAKE_CURRENT_SOURCE_DIR}/imgui/imgui-master)
+
+set(IMGUI_SRC
+    ${IMGUI_DIR}/imgui.cpp
+    ${IMGUI_DIR}/imgui_draw.cpp
+    ${IMGUI_DIR}/imgui_tables.cpp
+    ${IMGUI_DIR}/imgui_widgets.cpp
+  )
+
+add_library(imgui STATIC ${IMGUI_SRC})
+target_include_directories(imgui PUBLIC ${IMGUI_DIR})
 
 # Find GLM (must be installed)
 find_package(glm REQUIRED)
@@ -29,4 +38,5 @@ target_link_libraries(my_opengl_app
     glad
     glfw  # target name is 'glfw' when using add_subdirectory
     glm::glm
+    imgui
 )
