@@ -9,6 +9,10 @@ target_include_directories(glad PUBLIC include)
 # Replace with correct path to GLFW source
 add_subdirectory("/home/aidan/Programs/GLFW/glfw-3.4" "${CMAKE_BINARY_DIR}/glfw-build")
 
+# Find Dear ImGUI
+add_subdirectory("imgui/imgui-master")
+add_subdirectory("imgui/imgui-master/backends")
+
 # Find GLM (must be installed)
 find_package(glm REQUIRED)
 
