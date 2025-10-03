@@ -54,12 +54,11 @@ int main() {
     // Vertex Data
     float vertices [] = {
         // positions         // colors
-         0.5f, 0.5f, 0.0f,  1.0f, 0.0f, 0.0f,  // bottom right
-        -0.5f, 0.5f, 0.0f,  0.0f, 1.0f, 0.0f,  // bottom left
-         0.0f, -0.5f, 0.0f,  0.0f, 0.0f, 1.0f   // top 
+        0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f,  // bottom right
+        -0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f,  // bottom left
+        0.0f, 0.5f, 0.0f,  0.0f, 0.0f, 1.0f   // top 
     };
 
-    
     unsigned int VBO, VAO;
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
@@ -88,6 +87,10 @@ int main() {
 
         // Render the triangle
         ourShader.use();
+        float offset = 0.5f;
+        ourShader.setFloat("xOffset", offset);
+
+
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 3);
 
