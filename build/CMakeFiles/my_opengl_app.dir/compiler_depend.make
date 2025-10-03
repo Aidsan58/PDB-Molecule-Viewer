@@ -191,8 +191,26 @@ CMakeFiles/my_opengl_app.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/c++/11/bits/basic_ios.tcc \
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
-  /usr/include/c++/11/bits/istream.tcc
+  /usr/include/c++/11/bits/istream.tcc \
+  ../src/shader.h \
+  /usr/include/c++/11/fstream \
+  /usr/include/c++/11/bits/codecvt.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
+  /usr/include/c++/11/bits/fstream.tcc \
+  /usr/include/c++/11/sstream \
+  /usr/include/c++/11/bits/sstream.tcc
 
+
+/usr/include/c++/11/sstream:
+
+/usr/include/c++/11/bits/fstream.tcc:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h:
+
+../src/shader.h:
 
 /usr/include/c++/11/bits/istream.tcc:
 
@@ -272,6 +290,8 @@ CMakeFiles/my_opengl_app.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/c++/11/bits/stl_function.h:
 
+/usr/include/c++/11/fstream:
+
 /usr/include/c++/11/ext/alloc_traits.h:
 
 /usr/include/c++/11/bits/cxxabi_forced.h:
@@ -289,6 +309,8 @@ CMakeFiles/my_opengl_app.dir/src/main.cpp.o: ../src/main.cpp \
 ../src/main.cpp:
 
 /usr/include/c++/11/iosfwd:
+
+/usr/include/c++/11/bits/codecvt.h:
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
@@ -565,6 +587,8 @@ CMakeFiles/my_opengl_app.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
+
+/usr/include/c++/11/bits/sstream.tcc:
 
 /usr/include/strings.h:
 
