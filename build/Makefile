@@ -383,6 +383,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_opengl_app.dir/build.make CMakeFiles/my_opengl_app.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/stb_specs.o: src/stb_specs.cpp.o
+.PHONY : src/stb_specs.o
+
+# target to build an object file
+src/stb_specs.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_opengl_app.dir/build.make CMakeFiles/my_opengl_app.dir/src/stb_specs.cpp.o
+.PHONY : src/stb_specs.cpp.o
+
+src/stb_specs.i: src/stb_specs.cpp.i
+.PHONY : src/stb_specs.i
+
+# target to preprocess a source file
+src/stb_specs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_opengl_app.dir/build.make CMakeFiles/my_opengl_app.dir/src/stb_specs.cpp.i
+.PHONY : src/stb_specs.cpp.i
+
+src/stb_specs.s: src/stb_specs.cpp.s
+.PHONY : src/stb_specs.s
+
+# target to generate assembly for a file
+src/stb_specs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_opengl_app.dir/build.make CMakeFiles/my_opengl_app.dir/src/stb_specs.cpp.s
+.PHONY : src/stb_specs.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -419,6 +443,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/stb_specs.o"
+	@echo "... src/stb_specs.i"
+	@echo "... src/stb_specs.s"
 .PHONY : help
 
 

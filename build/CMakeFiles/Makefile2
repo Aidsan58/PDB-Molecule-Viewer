@@ -191,12 +191,12 @@ CMakeFiles/my_opengl_app.dir/all: CMakeFiles/imgui.dir/all
 CMakeFiles/my_opengl_app.dir/all: glfw-build/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_opengl_app.dir/build.make CMakeFiles/my_opengl_app.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_opengl_app.dir/build.make CMakeFiles/my_opengl_app.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aidan/Code/Projects/opengl-project/build/CMakeFiles --progress-num=53,54 "Built target my_opengl_app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aidan/Code/Projects/opengl-project/build/CMakeFiles --progress-num=53,54,55 "Built target my_opengl_app"
 .PHONY : CMakeFiles/my_opengl_app.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/my_opengl_app.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aidan/Code/Projects/opengl-project/build/CMakeFiles 54
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aidan/Code/Projects/opengl-project/build/CMakeFiles 55
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/my_opengl_app.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/aidan/Code/Projects/opengl-project/build/CMakeFiles 0
 .PHONY : CMakeFiles/my_opengl_app.dir/rule
@@ -269,7 +269,7 @@ glfw-build/src/CMakeFiles/glfw.dir/clean:
 glfw-build/src/CMakeFiles/update_mappings.dir/all:
 	$(MAKE) $(MAKESILENT) -f glfw-build/src/CMakeFiles/update_mappings.dir/build.make glfw-build/src/CMakeFiles/update_mappings.dir/depend
 	$(MAKE) $(MAKESILENT) -f glfw-build/src/CMakeFiles/update_mappings.dir/build.make glfw-build/src/CMakeFiles/update_mappings.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aidan/Code/Projects/opengl-project/build/CMakeFiles --progress-num=55 "Built target update_mappings"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aidan/Code/Projects/opengl-project/build/CMakeFiles --progress-num=56 "Built target update_mappings"
 .PHONY : glfw-build/src/CMakeFiles/update_mappings.dir/all
 
 # Build rule for subdir invocation for target.

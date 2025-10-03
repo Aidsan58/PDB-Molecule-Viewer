@@ -29,7 +29,10 @@ find_package(glm REQUIRED)
 find_package(OpenGL REQUIRED)
 
 # Add executable
-add_executable(my_opengl_app src/main.cpp)
+add_executable(my_opengl_app 
+    src/main.cpp
+    src/stb_specs.cpp
+)
 
 # Link libraries
 target_link_libraries(my_opengl_app
