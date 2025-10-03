@@ -1,4 +1,3 @@
-
 #define GLFW_INCLUDE_NONE
 #include <glad/glad.h>
 #include "imgui.h"
@@ -9,6 +8,8 @@
 #include <iostream>
 
 #include "shader.h"
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h" // STB image loader
 
 // Viewport changes if user changes window size
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
@@ -58,6 +59,19 @@ int main() {
         -0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f,  // bottom left
         0.0f, 0.5f, 0.0f,  0.0f, 0.0f, 1.0f   // top 
     };
+
+    // Texture Data (Coordinates)
+    float texCoords[] {
+        0.0f, 0.0f,  // lower-left corner  
+        1.0f, 0.0f,  // lower-right corner
+        0.5f, 1.0f   // top-center corner
+    };
+    // Sets texture wrapping method to GL_MIRRORED_REPEAT
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+    // Sets texture filtering method to GL_LINEAR_MIPMAP_LINEAR for downscaled textures, and GL_LINEAR for upscaled textures 
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
     unsigned int VBO, VAO;
     glGenVertexArrays(1, &VAO);
