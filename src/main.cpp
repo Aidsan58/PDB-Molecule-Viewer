@@ -6,9 +6,14 @@
 #include <GLFW/glfw3.h>
 #include <stdio.h>
 #include <iostream>
-
+// GLM math library
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+// Shader class
 #include "shader.h"
-#include "stb_image.h" // STB image loader
+// STB image loader
+#include "stb_image.h"
 
 // Viewport changes if user changes window size
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
