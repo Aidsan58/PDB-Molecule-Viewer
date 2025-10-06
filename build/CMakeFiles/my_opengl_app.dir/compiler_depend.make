@@ -424,7 +424,8 @@ CMakeFiles/my_opengl_app.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/c++/11/sstream \
   /usr/include/c++/11/bits/sstream.tcc \
   ../src/stb_image.h \
-  /usr/include/c++/11/stdlib.h
+  /usr/include/c++/11/stdlib.h \
+  ../src/flyCamera.h
 
 CMakeFiles/my_opengl_app.dir/src/stb_specs.cpp.o: ../src/stb_specs.cpp \
   /usr/include/stdc-predef.h \
@@ -818,6 +819,8 @@ CMakeFiles/my_opengl_app.dir/src/stb_specs.cpp.o: ../src/stb_specs.cpp \
 /usr/include/locale.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
+
+../src/flyCamera.h:
 
 /usr/include/c++/11/bits/localefwd.h:
 

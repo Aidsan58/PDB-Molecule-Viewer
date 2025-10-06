@@ -353,4 +353,5 @@ CMakeFiles/my_opengl_app.dir/src/main.cpp.o: \
  /usr/include/c++/11/bits/fstream.tcc /usr/include/c++/11/sstream \
  /usr/include/c++/11/bits/sstream.tcc \
  /home/aidan/Code/Projects/opengl-project/src/stb_image.h \
- /usr/include/c++/11/stdlib.h
+ /usr/include/c++/11/stdlib.h \
+ /home/aidan/Code/Projects/opengl-project/src/flyCamera.h
