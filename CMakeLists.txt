@@ -33,6 +33,7 @@ find_package(OpenGL REQUIRED)
 # Add executable
 add_executable(my_opengl_app 
     src/main.cpp
+    src/Sphere.cpp
     src/stb_specs.cpp
 )
 

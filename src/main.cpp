@@ -14,8 +14,6 @@
 #include "stb_image.h"
 // Camera class
 #include "flyCamera.h"
-// Model class
-#include "model.h"
 #include <string>
 #include <fstream>
 #include <sstream>
@@ -24,6 +22,7 @@
 #include <vector>
 #include <stdio.h>
 #include <filesystem>
+#include "Sphere.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
@@ -46,6 +45,38 @@ float lastFrame = 0.0f;
 
 // lighting
 glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
+
+// cpk coloring map
+std::unordered_map<std::string, glm::vec3> elementColors = {
+    {"C", glm::vec3(0.784f, 0.784f, 0.784f)},   // gray
+    {"O", glm::vec3(0.941f, 0.0f, 0.0f)},   // red
+    {"N", glm::vec3(0.561f, 0.561f, 1.0f)},   // light blue
+    {"H", glm::vec3(1.0f, 1.0f, 1.0f)},   // white
+    {"S", glm::vec3(1.0f, 0.784f, 0.0f)},   // yellow
+    {"P", glm::vec3(1.0f, 0.647f, 0.0f)},   // orange
+    {"NA", glm::vec3(0.0f, 0.0f, 1.0f)},   // blue
+    {"CL", glm::vec3(0.0f, 1.0f, 0.0f)},   // green
+    {"FE", glm::vec3(1.0f, 0.647f, 0.0f)},   // orange
+    {"CA", glm::vec3(0.502f, 0.502f, 0.565f)},   // dark grey
+    {"BR", glm::vec3(0.647f, 0.165f, 0.165f)},   // brown
+    {"MG", glm::vec3(0.133f, 0.545f, 0.133f)},   // forest green
+};
+// cpk atomic radii in Angstroms (divided by 100)
+std::unordered_map<std::string, float> elementRadii = {
+    {"C", 1.70f},
+    {"O", 1.52f},
+    {"N", 1.55f},
+    {"H", 1.20f},
+    {"S", 1.80f},
+    {"P", 1.80f},
+    {"NA", 2.27f},
+    {"CL", 1.75f},
+    {"FE", 1.94f},
+    {"CA", 1.97f},    
+    {"BR", 1.85f},
+    {"MG", 1.73f},
+};
+
 
 int main() {
     // Instantiate GLFW window
@@ -81,10 +112,8 @@ int main() {
     glEnable(GL_DEPTH_TEST);
    
     // Shader Program
-    Shader ourShader("shaders/modelVertex.glsl", "shaders/modelFragment.glsl");
+    Shader ourShader("shaders/atomVertexShader.glsl", "shaders/atomFragmentShader.glsl");
     
-    // Vertex Data
-    Model ourModel("resources/objects/backpack/backpack.obj");
     
     // Render loop
     while (!glfwWindowShouldClose(window))
@@ -107,18 +136,6 @@ int main() {
         // don't forget to enable shader before setting uniforms
         ourShader.use();
 
-        // view/projection transformations
-        glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
-        glm::mat4 view = camera.GetViewMatrix();
-        ourShader.setMat4("projection", projection);
-        ourShader.setMat4("view", view);
-
-        // render the loaded model
-        glm::mat4 model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f)); // translate it down so it's at the center of the scene
-        model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));	// it's a bit too big for our scene, so scale it down
-        ourShader.setMat4("model", model);
-        ourModel.Draw(ourShader);  
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         glfwSwapBuffers(window);
         glfwPollEvents();

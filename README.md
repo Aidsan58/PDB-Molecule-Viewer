@@ -1,5 +1,5 @@
 # Description
-This OpenGL-based application renders molecular structures using a ball-and-stick model from a PDB file. Currenly PDB is the only supported file format planned.
+This OpenGL-based application renders molecular structures using a space-filling model from a PDB file. Currenly PDB is the only supported file format planned. Follows CPK coloring scheme.
 
 # Technologies used:     
 OpenGL as the rendering specification for rendering 3D graphics.       
