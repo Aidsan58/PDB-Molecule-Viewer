@@ -111,10 +111,12 @@ my_opengl_app: CMakeFiles/my_opengl_app.dir/build.make
 my_opengl_app: libglad.a
 my_opengl_app: glfw-build/src/libglfw3.a
 my_opengl_app: libimgui.a
+my_opengl_app: Assimp-build/lib/libassimp.a
 my_opengl_app: /usr/lib/x86_64-linux-gnu/libGLX.so
 my_opengl_app: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 my_opengl_app: /usr/lib/x86_64-linux-gnu/librt.a
 my_opengl_app: /usr/lib/x86_64-linux-gnu/libm.so
+my_opengl_app: /usr/lib/x86_64-linux-gnu/libz.a
 my_opengl_app: CMakeFiles/my_opengl_app.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aidan/Code/Projects/opengl-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable my_opengl_app"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/my_opengl_app.dir/link.txt --verbose=$(VERBOSE)

@@ -87,7 +87,7 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target list_install_components
 list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\" \"assimp-dev\" \"libassimp6.0.2-dev\""
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
@@ -238,6 +238,32 @@ update_mappings: cmake_check_build_system
 update_mappings/fast:
 	$(MAKE) $(MAKESILENT) -f glfw-build/src/CMakeFiles/update_mappings.dir/build.make glfw-build/src/CMakeFiles/update_mappings.dir/build
 .PHONY : update_mappings/fast
+
+#=============================================================================
+# Target rules for targets named assimp
+
+# Build rule for target.
+assimp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 assimp
+.PHONY : assimp
+
+# fast build rule for target.
+assimp/fast:
+	$(MAKE) $(MAKESILENT) -f Assimp-build/code/CMakeFiles/assimp.dir/build.make Assimp-build/code/CMakeFiles/assimp.dir/build
+.PHONY : assimp/fast
+
+#=============================================================================
+# Target rules for targets named unit
+
+# Build rule for target.
+unit: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 unit
+.PHONY : unit
+
+# fast build rule for target.
+unit/fast:
+	$(MAKE) $(MAKESILENT) -f Assimp-build/test/CMakeFiles/unit.dir/build.make Assimp-build/test/CMakeFiles/unit.dir/build
+.PHONY : unit/fast
 
 imgui/imgui-master/imgui.o: imgui/imgui-master/imgui.cpp.o
 .PHONY : imgui/imgui-master/imgui.o
@@ -421,10 +447,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... uninstall"
 	@echo "... update_mappings"
+	@echo "... assimp"
 	@echo "... glad"
 	@echo "... glfw"
 	@echo "... imgui"
 	@echo "... my_opengl_app"
+	@echo "... unit"
 	@echo "... imgui/imgui-master/imgui.o"
 	@echo "... imgui/imgui-master/imgui.i"
 	@echo "... imgui/imgui-master/imgui.s"

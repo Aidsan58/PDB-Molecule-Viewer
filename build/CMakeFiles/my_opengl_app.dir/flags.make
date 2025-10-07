@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/aidan/Code/Projects/opengl-project/include -I/home/aidan/Programs/GLFW/glfw-3.4/include -I/home/aidan/Code/Projects/opengl-project/imgui/imgui-master -isystem /usr/lib
+CXX_INCLUDES = -I/home/aidan/Code/Projects/opengl-project/include -I/home/aidan/Programs/GLFW/glfw-3.4/include -I/home/aidan/Code/Projects/opengl-project/imgui/imgui-master -I/home/aidan/Programs/assimp/code/../include -I/home/aidan/Code/Projects/opengl-project/build/Assimp-build/code/../include -isystem /usr/lib
 
 CXX_FLAGS = 
 

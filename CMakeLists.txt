@@ -5,9 +5,11 @@ project(OpenGL_Project)
 add_library(glad STATIC src/glad.c)
 target_include_directories(glad PUBLIC include)
 
-# Option 1: GLFW as subdirectory (recommended if not installed system-wide)
-# Replace with correct path to GLFW source
+# GLFW as subdirectory (recommended if not installed system-wide)
 add_subdirectory("/home/aidan/Programs/GLFW/glfw-3.4" "${CMAKE_BINARY_DIR}/glfw-build")
+
+# ASSIMP as subdirectory
+add_subdirectory("/home/aidan/Programs/assimp/" "${CMAKE_BINARY_DIR}/Assimp-build")
 
 # Add Dear Imgui
 set(IMGUI_DIR ${CMAKE_CURRENT_SOURCE_DIR}/imgui/imgui-master)
@@ -42,4 +44,5 @@ target_link_libraries(my_opengl_app
     glfw  # target name is 'glfw' when using add_subdirectory
     glm::glm
     imgui
+    assimp
 )
