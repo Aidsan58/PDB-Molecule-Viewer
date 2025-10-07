@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.14)
 project(OpenGL_Project)
-
+set(CMAKE_CXX_STANDARD 20) # For C++17
 # Add GLAD
 add_library(glad STATIC src/glad.c)
 target_include_directories(glad PUBLIC include)

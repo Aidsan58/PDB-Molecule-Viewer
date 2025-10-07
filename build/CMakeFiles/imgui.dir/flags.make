@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/aidan/Code/Projects/opengl-project/imgui/imgui-master
 
-CXX_FLAGS = 
+CXX_FLAGS = -std=gnu++20
 
