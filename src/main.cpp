@@ -8,12 +8,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-// Shader class
-#include "shader.h"
-// STB image loader
-#include "stb_image.h"
-// Camera class
-#include "flyCamera.h"
+// Standard library headers
 #include <string>
 #include <fstream>
 #include <sstream>
@@ -22,8 +17,16 @@
 #include <vector>
 #include <stdio.h>
 #include <filesystem>
-#include "Sphere.h"
 #include <unordered_map>
+// Shader class
+#include "shader.h"
+// STB image loader
+#include "stb_image.h"
+// Camera class
+#include "flyCamera.h"
+// Sphere class
+#include "Sphere.h"
+
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
@@ -31,6 +34,7 @@ void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 void processInput(GLFWwindow *window);
 
 unsigned int loadTexture(const char *path);
+
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
@@ -63,6 +67,7 @@ std::unordered_map<std::string, glm::vec3> elementColors = {
     {"BR", glm::vec3(0.647f, 0.165f, 0.165f)},   // brown
     {"MG", glm::vec3(0.133f, 0.545f, 0.133f)},   // forest green
 };
+
 // cpk atomic radii in Angstroms (divided by 100)
 std::unordered_map<std::string, float> elementRadii = {
     {"C", 1.70f},
@@ -78,7 +83,6 @@ std::unordered_map<std::string, float> elementRadii = {
     {"BR", 1.85f},
     {"MG", 1.73f},
 };
-
 
 int main() {
     // Instantiate GLFW window
@@ -126,38 +130,25 @@ int main() {
     std::string line;
     if (inputFile.is_open()) { // Check if the file opened successfully
         while (std::getline(inputFile, line)) { // Read line by line    
-            std::istringstream iss(line);
-            std::string token;
-            int number;
-
-            // ATOM    789  CG  LEU A 106      14.830  -9.976   3.271  1.00 10.45           C  
-            std::string nameLabel, nameValue, otherLabel, chain, element;
-            int index;
-            float x, y, z, occupancy, temperatureFactor;
-            glm::vec3 position;
             if (line.substr(0, 6) == "ATOM  ") {
                 std::string element = line.substr(76, 2);
                 float x = std::stof(line.substr(30, 8));
                 float y = std::stof(line.substr(38, 8));
                 float z = std::stof(line.substr(46, 8));
-
                 glm::vec3 position = glm::vec3(x, y, z);
-                
                 // Trim spaces from element string
                 element.erase(remove_if(element.begin(), element.end(), ::isspace), element.end());
-
                 Atom atom(element, position);
                 glm::vec3 color = atom.getAtomColor(atom.element, elementColors);
                 float radius = atom.getAtomicRadius(atom.element, elementRadii);
                 instances.emplace_back(atom.position, radius, color);
-            }      
+            }
         }
-        inputFile.close(); // Close the file
+        inputFile.close();
     } else {
         std::cerr << "Error: Unable to open file." << std::endl;
     }
     
- 
     // Render loop
     while (!glfwWindowShouldClose(window))
     {
@@ -183,12 +174,11 @@ int main() {
         // Setup camera matrices
         glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
         glm::mat4 view = camera.GetViewMatrix();
-
         ourShader.setMat4("view", view);
         ourShader.setMat4("projection", projection);
         ourShader.setVec3("lightPos", lightPos);
         ourShader.setVec3("viewPos", camera.Position);
-                
+        // Set up + draw meshes
         sphere.drawInstances(instances);
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         glfwSwapBuffers(window);
