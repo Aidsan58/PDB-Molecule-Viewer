@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/my_opengl_app.dir/src/Sphere.cpp.o"
+  "CMakeFiles/my_opengl_app.dir/src/Sphere.cpp.o.d"
   "CMakeFiles/my_opengl_app.dir/src/main.cpp.o"
   "CMakeFiles/my_opengl_app.dir/src/main.cpp.o.d"
   "CMakeFiles/my_opengl_app.dir/src/stb_specs.cpp.o"

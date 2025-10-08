@@ -1,31 +1,20 @@
 
 #include "Sphere.h"
 #include <cmath>
+#include <iostream>
 
-
-Atom::getAtomicRadius(const std::string& element, std::unordered_map<std::string, float> vanDerWaalsRadii) {
+// ---- Atom Static Methods ----
+float Atom::getAtomicRadius(const std::string& element, const std::unordered_map<std::string, float>& vanDerWaalsRadii) {
     auto it = vanDerWaalsRadii.find(element);
-    if (it != vanDerWaalsRadii.end())
-        return it->second * 0.1f; // scale to fit your scene
-    else
-        return 1.5f * 0.1f; // fallback radius
+    return (it != vanDerWaalsRadii.end()) ? it->second * 0.01f : 1.5f * 0.01f;
 }
 
-Atom::getAtomColor(const std::string& element, std::unordered_map<std::string, glm::vec3> atomColors) {
+glm::vec3 Atom::getAtomColor(const std::string& element, const std::unordered_map<std::string, glm::vec3>& atomColors) {
     auto it = atomColors.find(element);
-    if (it != atomColors.end()) {
-        return it->second;
-    } else {
-        return glm::vec3(1.0f, 1.0f, 1.0f); // default: white
-    }
+    return (it != atomColors.end()) ? it->second : glm::vec3(1.0f);
 }
 
-SphereInstance::makeSphere(const Atom& atom) {
-    float radius = getAtomicRadius(atom.element);
-    glm::vec3 color = getAtomColor(atom.element);
-    return SphereInstance(atom.position, radius, color);
-}
-
+// ---- Sphere ----
 Sphere::Sphere(unsigned int sectorCount, unsigned int stackCount) {
     generateMesh(sectorCount, stackCount);
     setupMesh();
@@ -35,29 +24,24 @@ Sphere::~Sphere() {
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
     glDeleteBuffers(1, &EBO);
+    glDeleteBuffers(1, &instanceVBO);
 }
 
 void Sphere::generateMesh(unsigned int sectorCount, unsigned int stackCount) {
     const float PI = 3.14159265359f;
     float x, y, z, xy;
-    float nx, ny, nz;
-    float s, t;
-
     float radius = 1.0f;
-    float lengthInv = 1.0f / radius;
 
     float sectorStep = 2 * PI / sectorCount;
     float stackStep = PI / stackCount;
-    float sectorAngle, stackAngle;
 
-    // Generate vertices
     for (unsigned int i = 0; i <= stackCount; ++i) {
-        stackAngle = PI / 2 - i * stackStep;   // from pi/2 to -pi/2
+        float stackAngle = PI / 2 - i * stackStep;
         xy = radius * cosf(stackAngle);
         z = radius * sinf(stackAngle);
 
         for (unsigned int j = 0; j <= sectorCount; ++j) {
-            sectorAngle = j * sectorStep;
+            float sectorAngle = j * sectorStep;
 
             x = xy * cosf(sectorAngle);
             y = xy * sinf(sectorAngle);
@@ -66,12 +50,11 @@ void Sphere::generateMesh(unsigned int sectorCount, unsigned int stackCount) {
             vertex.position = glm::vec3(x, y, z);
             vertex.normal = glm::normalize(vertex.position);
             vertex.texCoords = glm::vec2((float)j / sectorCount, (float)i / stackCount);
-
             vertices.push_back(vertex);
         }
     }
 
-    // Generate indices
+    // Indices
     for (unsigned int i = 0; i < stackCount; ++i) {
         unsigned int k1 = i * (sectorCount + 1);
         unsigned int k2 = k1 + sectorCount + 1;
@@ -82,7 +65,6 @@ void Sphere::generateMesh(unsigned int sectorCount, unsigned int stackCount) {
                 indices.push_back(k2);
                 indices.push_back(k1 + 1);
             }
-
             if (i != (stackCount - 1)) {
                 indices.push_back(k1 + 1);
                 indices.push_back(k2);
@@ -92,7 +74,6 @@ void Sphere::generateMesh(unsigned int sectorCount, unsigned int stackCount) {
     }
 }
 
-
 void Sphere::setupMesh() {
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
@@ -100,21 +81,24 @@ void Sphere::setupMesh() {
 
     glBindVertexArray(VAO);
 
+    // Vertex buffer
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(Vertex), vertices.data(), GL_STATIC_DRAW);
 
+    // Index buffer
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int), indices.data(), GL_STATIC_DRAW);
 
-    // Position attribute
+    // Vertex attributes
+    // position
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)0);
     glEnableVertexAttribArray(0);
 
-    // Normal attribute
+    // normal
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, normal));
     glEnableVertexAttribArray(1);
 
-    // TexCoord attribute
+    // texCoords
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, texCoords));
     glEnableVertexAttribArray(2);
 
@@ -126,3 +110,48 @@ void Sphere::draw() {
     glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
     glBindVertexArray(0);
 }
+
+void Sphere::drawInstances(const std::vector<SphereInstance>& instances) {
+    if (!instanceBufferInitialized) {
+        glGenBuffers(1, &instanceVBO);
+        instanceBufferInitialized = true;
+    }
+
+    glBindVertexArray(VAO);
+
+    // Format: vec3 pos, float scale, vec3 color → total = 7 floats
+    std::vector<float> instanceData;
+    for (const auto& inst : instances) {
+        instanceData.push_back(inst.position.x);
+        instanceData.push_back(inst.position.y);
+        instanceData.push_back(inst.position.z);
+        instanceData.push_back(inst.radius);
+        instanceData.push_back(inst.color.r);
+        instanceData.push_back(inst.color.g);
+        instanceData.push_back(inst.color.b);
+    }
+
+    glBindBuffer(GL_ARRAY_BUFFER, instanceVBO);
+    glBufferData(GL_ARRAY_BUFFER, instanceData.size() * sizeof(float), instanceData.data(), GL_DYNAMIC_DRAW);
+
+    // Position (vec3)
+    glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, 7 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(3);
+    glVertexAttribDivisor(3, 1);
+
+    // Radius (float)
+    glVertexAttribPointer(4, 1, GL_FLOAT, GL_FALSE, 7 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(4);
+    glVertexAttribDivisor(4, 1);
+
+    // Color (vec3)
+    glVertexAttribPointer(5, 3, GL_FLOAT, GL_FALSE, 7 * sizeof(float), (void*)(4 * sizeof(float)));
+    glEnableVertexAttribArray(5);
+    glVertexAttribDivisor(5, 1);
+
+    // Draw
+    glDrawElementsInstanced(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0, instances.size());
+
+    glBindVertexArray(0);
+}
+

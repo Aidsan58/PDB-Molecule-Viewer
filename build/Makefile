@@ -361,6 +361,30 @@ imgui/imgui-master/imgui_widgets.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/imgui/imgui-master/imgui_widgets.cpp.s
 .PHONY : imgui/imgui-master/imgui_widgets.cpp.s
 
+src/Sphere.o: src/Sphere.cpp.o
+.PHONY : src/Sphere.o
+
+# target to build an object file
+src/Sphere.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_opengl_app.dir/build.make CMakeFiles/my_opengl_app.dir/src/Sphere.cpp.o
+.PHONY : src/Sphere.cpp.o
+
+src/Sphere.i: src/Sphere.cpp.i
+.PHONY : src/Sphere.i
+
+# target to preprocess a source file
+src/Sphere.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_opengl_app.dir/build.make CMakeFiles/my_opengl_app.dir/src/Sphere.cpp.i
+.PHONY : src/Sphere.cpp.i
+
+src/Sphere.s: src/Sphere.cpp.s
+.PHONY : src/Sphere.s
+
+# target to generate assembly for a file
+src/Sphere.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_opengl_app.dir/build.make CMakeFiles/my_opengl_app.dir/src/Sphere.cpp.s
+.PHONY : src/Sphere.cpp.s
+
 src/glad.o: src/glad.c.o
 .PHONY : src/glad.o
 
@@ -465,6 +489,9 @@ help:
 	@echo "... imgui/imgui-master/imgui_widgets.o"
 	@echo "... imgui/imgui-master/imgui_widgets.i"
 	@echo "... imgui/imgui-master/imgui_widgets.s"
+	@echo "... src/Sphere.o"
+	@echo "... src/Sphere.i"
+	@echo "... src/Sphere.s"
 	@echo "... src/glad.o"
 	@echo "... src/glad.i"
 	@echo "... src/glad.s"

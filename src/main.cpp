@@ -23,11 +23,13 @@
 #include <stdio.h>
 #include <filesystem>
 #include "Sphere.h"
+#include <unordered_map>
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 void processInput(GLFWwindow *window);
+
 unsigned int loadTexture(const char *path);
 // settings
 const unsigned int SCR_WIDTH = 800;
@@ -114,6 +116,17 @@ int main() {
     // Shader Program
     Shader ourShader("shaders/atomVertexShader.glsl", "shaders/atomFragmentShader.glsl");
     
+    // Sphere class
+    Sphere sphere;
+
+
+Atom atom("C", glm::vec3(0,0,0));
+
+glm::vec3 color = atom.getAtomColor(atom.element, elementColors);
+float radius = atom.getAtomicRadius(atom.element, elementRadii);
+
+std::vector<SphereInstance> instances;
+instances.emplace_back(atom.position, radius, color);
     
     // Render loop
     while (!glfwWindowShouldClose(window))
@@ -134,9 +147,20 @@ int main() {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         // don't forget to enable shader before setting uniforms
-        ourShader.use();
+        
+ourShader.use();
 
-        // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
+// Setup camera matrices
+glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
+glm::mat4 view = camera.GetViewMatrix();
+
+ourShader.setMat4("view", view);
+ourShader.setMat4("projection", projection);
+ourShader.setVec3("lightPos", lightPos);
+ourShader.setVec3("viewPos", camera.Position);
+        
+    sphere.drawInstances(instances);
+// glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         glfwSwapBuffers(window);
         glfwPollEvents();
     }

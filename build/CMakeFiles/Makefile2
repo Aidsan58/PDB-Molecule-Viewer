@@ -205,12 +205,12 @@ glfw-build/src/clean: glfw-build/src/CMakeFiles/update_mappings.dir/clean
 CMakeFiles/glad.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/glad.dir/build.make CMakeFiles/glad.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/glad.dir/build.make CMakeFiles/glad.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aidan/Code/Projects/opengl-project/build/CMakeFiles --progress-num= "Built target glad"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aidan/Code/Projects/opengl-project/build/CMakeFiles --progress-num=56 "Built target glad"
 .PHONY : CMakeFiles/glad.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/glad.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aidan/Code/Projects/opengl-project/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aidan/Code/Projects/opengl-project/build/CMakeFiles 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/glad.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/aidan/Code/Projects/opengl-project/build/CMakeFiles 0
 .PHONY : CMakeFiles/glad.dir/rule
@@ -364,12 +364,12 @@ glfw-build/src/CMakeFiles/update_mappings.dir/clean:
 Assimp-build/code/CMakeFiles/assimp.dir/all:
 	$(MAKE) $(MAKESILENT) -f Assimp-build/code/CMakeFiles/assimp.dir/build.make Assimp-build/code/CMakeFiles/assimp.dir/depend
 	$(MAKE) $(MAKESILENT) -f Assimp-build/code/CMakeFiles/assimp.dir/build.make Assimp-build/code/CMakeFiles/assimp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aidan/Code/Projects/opengl-project/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56 "Built target assimp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aidan/Code/Projects/opengl-project/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55 "Built target assimp"
 .PHONY : Assimp-build/code/CMakeFiles/assimp.dir/all
 
 # Build rule for subdir invocation for target.
 Assimp-build/code/CMakeFiles/assimp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aidan/Code/Projects/opengl-project/build/CMakeFiles 56
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aidan/Code/Projects/opengl-project/build/CMakeFiles 55
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Assimp-build/code/CMakeFiles/assimp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/aidan/Code/Projects/opengl-project/build/CMakeFiles 0
 .PHONY : Assimp-build/code/CMakeFiles/assimp.dir/rule
@@ -395,7 +395,7 @@ Assimp-build/test/CMakeFiles/unit.dir/all: Assimp-build/code/CMakeFiles/assimp.d
 
 # Build rule for subdir invocation for target.
 Assimp-build/test/CMakeFiles/unit.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aidan/Code/Projects/opengl-project/build/CMakeFiles 86
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aidan/Code/Projects/opengl-project/build/CMakeFiles 85
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Assimp-build/test/CMakeFiles/unit.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/aidan/Code/Projects/opengl-project/build/CMakeFiles 0
 .PHONY : Assimp-build/test/CMakeFiles/unit.dir/rule
