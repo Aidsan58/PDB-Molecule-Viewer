@@ -272,9 +272,8 @@ CMakeFiles/my_opengl_app.dir/src/main.cpp.o: \
  /usr/include/glm/ext/vector_int1_sized.hpp \
  /usr/include/glm/ext/vector_uint1.hpp \
  /usr/include/glm/ext/vector_uint1_sized.hpp /usr/include/c++/11/cstring \
- /usr/include/glm/gtc/type_ptr.inl \
- /home/aidan/Code/Projects/opengl-project/src/shader.h \
- /usr/include/c++/11/string /usr/include/c++/11/bits/stringfwd.h \
+ /usr/include/glm/gtc/type_ptr.inl /usr/include/c++/11/string \
+ /usr/include/c++/11/bits/stringfwd.h \
  /usr/include/c++/11/bits/memoryfwd.h \
  /usr/include/c++/11/bits/char_traits.h \
  /usr/include/c++/11/bits/postypes.h /usr/include/c++/11/cwchar \
@@ -362,9 +361,6 @@ CMakeFiles/my_opengl_app.dir/src/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
  /usr/include/c++/11/bits/fstream.tcc /usr/include/c++/11/sstream \
  /usr/include/c++/11/bits/sstream.tcc /usr/include/c++/11/iostream \
- /home/aidan/Code/Projects/opengl-project/src/stb_image.h \
- /usr/include/c++/11/stdlib.h \
- /home/aidan/Code/Projects/opengl-project/src/flyCamera.h \
  /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
  /usr/include/c++/11/ext/aligned_buffer.h \
  /usr/include/c++/11/bits/node_handle.h \
@@ -394,9 +390,13 @@ CMakeFiles/my_opengl_app.dir/src/main.cpp.o: \
  /usr/include/c++/11/bits/shared_ptr_base.h \
  /usr/include/c++/11/bits/allocated_ptr.h \
  /usr/include/c++/11/bits/refwrap.h /usr/include/c++/11/bits/fs_dir.h \
- /usr/include/c++/11/bits/fs_ops.h \
- /home/aidan/Code/Projects/opengl-project/src/Sphere.h \
- /usr/include/c++/11/unordered_map /usr/include/c++/11/bits/hashtable.h \
+ /usr/include/c++/11/bits/fs_ops.h /usr/include/c++/11/unordered_map \
+ /usr/include/c++/11/bits/hashtable.h \
  /usr/include/c++/11/bits/hashtable_policy.h \
  /usr/include/c++/11/bits/enable_special_members.h \
- /usr/include/c++/11/bits/unordered_map.h
+ /usr/include/c++/11/bits/unordered_map.h \
+ /home/aidan/Code/Projects/opengl-project/src/shader.h \
+ /home/aidan/Code/Projects/opengl-project/src/stb_image.h \
+ /usr/include/c++/11/stdlib.h \
+ /home/aidan/Code/Projects/opengl-project/src/flyCamera.h \
+ /home/aidan/Code/Projects/opengl-project/src/Sphere.h

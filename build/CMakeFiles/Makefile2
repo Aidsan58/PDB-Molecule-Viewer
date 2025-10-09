@@ -205,12 +205,12 @@ glfw-build/src/clean: glfw-build/src/CMakeFiles/update_mappings.dir/clean
 CMakeFiles/glad.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/glad.dir/build.make CMakeFiles/glad.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/glad.dir/build.make CMakeFiles/glad.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aidan/Code/Projects/opengl-project/build/CMakeFiles --progress-num=56 "Built target glad"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aidan/Code/Projects/opengl-project/build/CMakeFiles --progress-num= "Built target glad"
 .PHONY : CMakeFiles/glad.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/glad.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aidan/Code/Projects/opengl-project/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aidan/Code/Projects/opengl-project/build/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/glad.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/aidan/Code/Projects/opengl-project/build/CMakeFiles 0
 .PHONY : CMakeFiles/glad.dir/rule
@@ -231,12 +231,12 @@ CMakeFiles/glad.dir/clean:
 CMakeFiles/imgui.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aidan/Code/Projects/opengl-project/build/CMakeFiles --progress-num=68 "Built target imgui"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aidan/Code/Projects/opengl-project/build/CMakeFiles --progress-num=67,68 "Built target imgui"
 .PHONY : CMakeFiles/imgui.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/imgui.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aidan/Code/Projects/opengl-project/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aidan/Code/Projects/opengl-project/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/imgui.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/aidan/Code/Projects/opengl-project/build/CMakeFiles 0
 .PHONY : CMakeFiles/imgui.dir/rule
@@ -312,7 +312,7 @@ glfw-build/CMakeFiles/uninstall.dir/clean:
 glfw-build/src/CMakeFiles/glfw.dir/all:
 	$(MAKE) $(MAKESILENT) -f glfw-build/src/CMakeFiles/glfw.dir/build.make glfw-build/src/CMakeFiles/glfw.dir/depend
 	$(MAKE) $(MAKESILENT) -f glfw-build/src/CMakeFiles/glfw.dir/build.make glfw-build/src/CMakeFiles/glfw.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aidan/Code/Projects/opengl-project/build/CMakeFiles --progress-num=57,58,59,60,61,62,63,64,65,66,67 "Built target glfw"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aidan/Code/Projects/opengl-project/build/CMakeFiles --progress-num=56,57,58,59,60,61,62,63,64,65,66 "Built target glfw"
 .PHONY : glfw-build/src/CMakeFiles/glfw.dir/all
 
 # Build rule for subdir invocation for target.

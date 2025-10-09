@@ -265,6 +265,54 @@ unit/fast:
 	$(MAKE) $(MAKESILENT) -f Assimp-build/test/CMakeFiles/unit.dir/build.make Assimp-build/test/CMakeFiles/unit.dir/build
 .PHONY : unit/fast
 
+imgui/imgui-master/backends/imgui_impl_glfw.o: imgui/imgui-master/backends/imgui_impl_glfw.cpp.o
+.PHONY : imgui/imgui-master/backends/imgui_impl_glfw.o
+
+# target to build an object file
+imgui/imgui-master/backends/imgui_impl_glfw.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_glfw.cpp.o
+.PHONY : imgui/imgui-master/backends/imgui_impl_glfw.cpp.o
+
+imgui/imgui-master/backends/imgui_impl_glfw.i: imgui/imgui-master/backends/imgui_impl_glfw.cpp.i
+.PHONY : imgui/imgui-master/backends/imgui_impl_glfw.i
+
+# target to preprocess a source file
+imgui/imgui-master/backends/imgui_impl_glfw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_glfw.cpp.i
+.PHONY : imgui/imgui-master/backends/imgui_impl_glfw.cpp.i
+
+imgui/imgui-master/backends/imgui_impl_glfw.s: imgui/imgui-master/backends/imgui_impl_glfw.cpp.s
+.PHONY : imgui/imgui-master/backends/imgui_impl_glfw.s
+
+# target to generate assembly for a file
+imgui/imgui-master/backends/imgui_impl_glfw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_glfw.cpp.s
+.PHONY : imgui/imgui-master/backends/imgui_impl_glfw.cpp.s
+
+imgui/imgui-master/backends/imgui_impl_opengl3.o: imgui/imgui-master/backends/imgui_impl_opengl3.cpp.o
+.PHONY : imgui/imgui-master/backends/imgui_impl_opengl3.o
+
+# target to build an object file
+imgui/imgui-master/backends/imgui_impl_opengl3.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_opengl3.cpp.o
+.PHONY : imgui/imgui-master/backends/imgui_impl_opengl3.cpp.o
+
+imgui/imgui-master/backends/imgui_impl_opengl3.i: imgui/imgui-master/backends/imgui_impl_opengl3.cpp.i
+.PHONY : imgui/imgui-master/backends/imgui_impl_opengl3.i
+
+# target to preprocess a source file
+imgui/imgui-master/backends/imgui_impl_opengl3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_opengl3.cpp.i
+.PHONY : imgui/imgui-master/backends/imgui_impl_opengl3.cpp.i
+
+imgui/imgui-master/backends/imgui_impl_opengl3.s: imgui/imgui-master/backends/imgui_impl_opengl3.cpp.s
+.PHONY : imgui/imgui-master/backends/imgui_impl_opengl3.s
+
+# target to generate assembly for a file
+imgui/imgui-master/backends/imgui_impl_opengl3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_opengl3.cpp.s
+.PHONY : imgui/imgui-master/backends/imgui_impl_opengl3.cpp.s
+
 imgui/imgui-master/imgui.o: imgui/imgui-master/imgui.cpp.o
 .PHONY : imgui/imgui-master/imgui.o
 
@@ -288,6 +336,30 @@ imgui/imgui-master/imgui.s: imgui/imgui-master/imgui.cpp.s
 imgui/imgui-master/imgui.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/imgui/imgui-master/imgui.cpp.s
 .PHONY : imgui/imgui-master/imgui.cpp.s
+
+imgui/imgui-master/imgui_demo.o: imgui/imgui-master/imgui_demo.cpp.o
+.PHONY : imgui/imgui-master/imgui_demo.o
+
+# target to build an object file
+imgui/imgui-master/imgui_demo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/imgui/imgui-master/imgui_demo.cpp.o
+.PHONY : imgui/imgui-master/imgui_demo.cpp.o
+
+imgui/imgui-master/imgui_demo.i: imgui/imgui-master/imgui_demo.cpp.i
+.PHONY : imgui/imgui-master/imgui_demo.i
+
+# target to preprocess a source file
+imgui/imgui-master/imgui_demo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/imgui/imgui-master/imgui_demo.cpp.i
+.PHONY : imgui/imgui-master/imgui_demo.cpp.i
+
+imgui/imgui-master/imgui_demo.s: imgui/imgui-master/imgui_demo.cpp.s
+.PHONY : imgui/imgui-master/imgui_demo.s
+
+# target to generate assembly for a file
+imgui/imgui-master/imgui_demo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/imgui/imgui-master/imgui_demo.cpp.s
+.PHONY : imgui/imgui-master/imgui_demo.cpp.s
 
 imgui/imgui-master/imgui_draw.o: imgui/imgui-master/imgui_draw.cpp.o
 .PHONY : imgui/imgui-master/imgui_draw.o
@@ -477,9 +549,18 @@ help:
 	@echo "... imgui"
 	@echo "... my_opengl_app"
 	@echo "... unit"
+	@echo "... imgui/imgui-master/backends/imgui_impl_glfw.o"
+	@echo "... imgui/imgui-master/backends/imgui_impl_glfw.i"
+	@echo "... imgui/imgui-master/backends/imgui_impl_glfw.s"
+	@echo "... imgui/imgui-master/backends/imgui_impl_opengl3.o"
+	@echo "... imgui/imgui-master/backends/imgui_impl_opengl3.i"
+	@echo "... imgui/imgui-master/backends/imgui_impl_opengl3.s"
 	@echo "... imgui/imgui-master/imgui.o"
 	@echo "... imgui/imgui-master/imgui.i"
 	@echo "... imgui/imgui-master/imgui.s"
+	@echo "... imgui/imgui-master/imgui_demo.o"
+	@echo "... imgui/imgui-master/imgui_demo.i"
+	@echo "... imgui/imgui-master/imgui_demo.s"
 	@echo "... imgui/imgui-master/imgui_draw.o"
 	@echo "... imgui/imgui-master/imgui_draw.i"
 	@echo "... imgui/imgui-master/imgui_draw.s"

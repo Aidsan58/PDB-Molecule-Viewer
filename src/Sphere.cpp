@@ -1,9 +1,6 @@
 
 #define GLFW_INCLUDE_NONE
 #include <glad/glad.h>
-#include "imgui.h"
-#include "backends/imgui_impl_glfw.h"
-#include "backends/imgui_impl_opengl3.h"
 #include <GLFW/glfw3.h>
 // GLM math library
 #include <glm/glm.hpp>
@@ -11,10 +8,6 @@
 #include <glm/gtc/type_ptr.hpp>
 // Shader class
 #include "shader.h"
-// STB image loader
-#include "stb_image.h"
-// Camera class
-#include "flyCamera.h"
 #include <string>
 #include <fstream>
 #include <sstream>
@@ -28,7 +21,7 @@
 // ---- Atom Static Methods ----
 float Atom::getAtomicRadius(const std::string& element, const std::unordered_map<std::string, float>& vanDerWaalsRadii) {
     auto it = vanDerWaalsRadii.find(element);
-    return (it != vanDerWaalsRadii.end()) ? it->second * 0.5f : 1.5f * 0.5f;
+    return (it != vanDerWaalsRadii.end()) ? it->second : 1.5f;
 }
 
 glm::vec3 Atom::getAtomColor(const std::string& element, const std::unordered_map<std::string, glm::vec3>& atomColors) {
@@ -49,6 +42,8 @@ Sphere::~Sphere() {
     glDeleteBuffers(1, &instanceVBO);
 }
 
+// Thank you to © 2005-2025, Song Ho Ahn (안성호) for providing the math behind the sphere mesh
+// https://www.songho.ca/opengl/gl_sphere.html
 void Sphere::generateMesh(unsigned int sectorCount, unsigned int stackCount) {
     const float PI = 3.14159265359f;
     float x, y, z, xy;

@@ -10,7 +10,7 @@
 #include <vector>
 #include <cmath>
 #include <string>
-#include <unordered_map>  // <-- Add this!
+#include <unordered_map>
 
 struct Atom {
     std::string element;
@@ -44,7 +44,7 @@ public:
     ~Sphere();
 
     void draw();
-    void drawInstances(const std::vector<SphereInstance>& instances);  // <-- Add this!
+    void drawInstances(const std::vector<SphereInstance>& instances);
 
 private:
     void generateMesh(unsigned int sectorCount, unsigned int stackCount);

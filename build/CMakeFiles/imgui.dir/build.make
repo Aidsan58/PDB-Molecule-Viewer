@@ -125,12 +125,57 @@ CMakeFiles/imgui.dir/imgui/imgui-master/imgui_widgets.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/imgui.dir/imgui/imgui-master/imgui_widgets.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aidan/Code/Projects/opengl-project/imgui/imgui-master/imgui_widgets.cpp -o CMakeFiles/imgui.dir/imgui/imgui-master/imgui_widgets.cpp.s
 
+CMakeFiles/imgui.dir/imgui/imgui-master/imgui_demo.cpp.o: CMakeFiles/imgui.dir/flags.make
+CMakeFiles/imgui.dir/imgui/imgui-master/imgui_demo.cpp.o: ../imgui/imgui-master/imgui_demo.cpp
+CMakeFiles/imgui.dir/imgui/imgui-master/imgui_demo.cpp.o: CMakeFiles/imgui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aidan/Code/Projects/opengl-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/imgui.dir/imgui/imgui-master/imgui_demo.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/imgui.dir/imgui/imgui-master/imgui_demo.cpp.o -MF CMakeFiles/imgui.dir/imgui/imgui-master/imgui_demo.cpp.o.d -o CMakeFiles/imgui.dir/imgui/imgui-master/imgui_demo.cpp.o -c /home/aidan/Code/Projects/opengl-project/imgui/imgui-master/imgui_demo.cpp
+
+CMakeFiles/imgui.dir/imgui/imgui-master/imgui_demo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/imgui.dir/imgui/imgui-master/imgui_demo.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aidan/Code/Projects/opengl-project/imgui/imgui-master/imgui_demo.cpp > CMakeFiles/imgui.dir/imgui/imgui-master/imgui_demo.cpp.i
+
+CMakeFiles/imgui.dir/imgui/imgui-master/imgui_demo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/imgui.dir/imgui/imgui-master/imgui_demo.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aidan/Code/Projects/opengl-project/imgui/imgui-master/imgui_demo.cpp -o CMakeFiles/imgui.dir/imgui/imgui-master/imgui_demo.cpp.s
+
+CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_glfw.cpp.o: CMakeFiles/imgui.dir/flags.make
+CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_glfw.cpp.o: ../imgui/imgui-master/backends/imgui_impl_glfw.cpp
+CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_glfw.cpp.o: CMakeFiles/imgui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aidan/Code/Projects/opengl-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_glfw.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_glfw.cpp.o -MF CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_glfw.cpp.o.d -o CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_glfw.cpp.o -c /home/aidan/Code/Projects/opengl-project/imgui/imgui-master/backends/imgui_impl_glfw.cpp
+
+CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_glfw.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_glfw.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aidan/Code/Projects/opengl-project/imgui/imgui-master/backends/imgui_impl_glfw.cpp > CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_glfw.cpp.i
+
+CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_glfw.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_glfw.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aidan/Code/Projects/opengl-project/imgui/imgui-master/backends/imgui_impl_glfw.cpp -o CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_glfw.cpp.s
+
+CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_opengl3.cpp.o: CMakeFiles/imgui.dir/flags.make
+CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_opengl3.cpp.o: ../imgui/imgui-master/backends/imgui_impl_opengl3.cpp
+CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_opengl3.cpp.o: CMakeFiles/imgui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aidan/Code/Projects/opengl-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_opengl3.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_opengl3.cpp.o -MF CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_opengl3.cpp.o.d -o CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_opengl3.cpp.o -c /home/aidan/Code/Projects/opengl-project/imgui/imgui-master/backends/imgui_impl_opengl3.cpp
+
+CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_opengl3.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_opengl3.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aidan/Code/Projects/opengl-project/imgui/imgui-master/backends/imgui_impl_opengl3.cpp > CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_opengl3.cpp.i
+
+CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_opengl3.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_opengl3.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aidan/Code/Projects/opengl-project/imgui/imgui-master/backends/imgui_impl_opengl3.cpp -o CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_opengl3.cpp.s
+
 # Object files for target imgui
 imgui_OBJECTS = \
 "CMakeFiles/imgui.dir/imgui/imgui-master/imgui.cpp.o" \
 "CMakeFiles/imgui.dir/imgui/imgui-master/imgui_draw.cpp.o" \
 "CMakeFiles/imgui.dir/imgui/imgui-master/imgui_tables.cpp.o" \
-"CMakeFiles/imgui.dir/imgui/imgui-master/imgui_widgets.cpp.o"
+"CMakeFiles/imgui.dir/imgui/imgui-master/imgui_widgets.cpp.o" \
+"CMakeFiles/imgui.dir/imgui/imgui-master/imgui_demo.cpp.o" \
+"CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_glfw.cpp.o" \
+"CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_opengl3.cpp.o"
 
 # External object files for target imgui
 imgui_EXTERNAL_OBJECTS =
@@ -139,9 +184,12 @@ libimgui.a: CMakeFiles/imgui.dir/imgui/imgui-master/imgui.cpp.o
 libimgui.a: CMakeFiles/imgui.dir/imgui/imgui-master/imgui_draw.cpp.o
 libimgui.a: CMakeFiles/imgui.dir/imgui/imgui-master/imgui_tables.cpp.o
 libimgui.a: CMakeFiles/imgui.dir/imgui/imgui-master/imgui_widgets.cpp.o
+libimgui.a: CMakeFiles/imgui.dir/imgui/imgui-master/imgui_demo.cpp.o
+libimgui.a: CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_glfw.cpp.o
+libimgui.a: CMakeFiles/imgui.dir/imgui/imgui-master/backends/imgui_impl_opengl3.cpp.o
 libimgui.a: CMakeFiles/imgui.dir/build.make
 libimgui.a: CMakeFiles/imgui.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aidan/Code/Projects/opengl-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libimgui.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aidan/Code/Projects/opengl-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library libimgui.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/imgui.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/imgui.dir/link.txt --verbose=$(VERBOSE)
 
