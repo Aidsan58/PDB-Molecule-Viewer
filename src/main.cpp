@@ -36,6 +36,7 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 void processInput(GLFWwindow *window);
+void loadPDBFile(const std::string& filePath);
 void drawGui();
 
 unsigned int loadTexture(const char *path);
@@ -141,30 +142,7 @@ int main() {
     
     std::vector<SphereInstance> instances;
    
-    // Parse PDB file
-    std::ifstream inputFile("examples/2PGH.pdb");
-    std::string line;
-    if (inputFile.is_open()) { // Check if the file opened successfully
-        while (std::getline(inputFile, line)) { // Read line by line    
-            if (line.substr(0, 6) == "ATOM  ") {
-                std::string element = line.substr(76, 2);
-                float x = std::stof(line.substr(30, 8));
-                float y = std::stof(line.substr(38, 8));
-                float z = std::stof(line.substr(46, 8));
-                glm::vec3 position = glm::vec3(x, y, z);
-                // Trim spaces from element string
-                element.erase(remove_if(element.begin(), element.end(), ::isspace), element.end());
-                Atom atom(element, position);
-                glm::vec3 color = atom.getAtomColor(atom.element, elementColors);
-                float radius = atom.getAtomicRadius(atom.element, elementRadii);
-                instances.emplace_back(atom.position, radius, color);
-            }
-        }
-        inputFile.close();
-    } else {
-        std::cerr << "Error: Unable to open file." << std::endl;
-    }
-    
+   
     // Render loop
     while (!glfwWindowShouldClose(window))
     {
@@ -300,6 +278,33 @@ unsigned int loadTexture(char const * path)
     }
 
     return textureID;
+}
+
+
+// Parse PDB file
+void loadPDBFile(const std::string& filePath) {
+    std::ifstream inputFile(filePath);
+    std::string line;
+    if (inputFile.is_open()) { // Check if the file opened successfully
+        while (std::getline(inputFile, line)) { // Read line by line    
+            if (line.substr(0, 6) == "ATOM  ") {
+                std::string element = line.substr(76, 2);
+                float x = std::stof(line.substr(30, 8));
+                float y = std::stof(line.substr(38, 8));
+                float z = std::stof(line.substr(46, 8));
+                glm::vec3 position = glm::vec3(x, y, z);
+                // Trim spaces from element string
+                element.erase(remove_if(element.begin(), element.end(), ::isspace), element.end());
+                Atom atom(element, position);
+                glm::vec3 color = atom.getAtomColor(atom.element, elementColors);
+                float radius = atom.getAtomicRadius(atom.element, elementRadii);
+                instances.emplace_back(atom.position, radius, color);
+            }
+        }
+        inputFile.close();
+    } else {
+        std::cerr << "Error: Unable to open file." << std::endl;
+    }
 }
 
 // imgui file dialog
