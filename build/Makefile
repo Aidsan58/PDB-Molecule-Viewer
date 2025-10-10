@@ -265,6 +265,30 @@ unit/fast:
 	$(MAKE) $(MAKESILENT) -f Assimp-build/test/CMakeFiles/unit.dir/build.make Assimp-build/test/CMakeFiles/unit.dir/build
 .PHONY : unit/fast
 
+ImGuiFileDialog/ImGuiFileDialog.o: ImGuiFileDialog/ImGuiFileDialog.cpp.o
+.PHONY : ImGuiFileDialog/ImGuiFileDialog.o
+
+# target to build an object file
+ImGuiFileDialog/ImGuiFileDialog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_opengl_app.dir/build.make CMakeFiles/my_opengl_app.dir/ImGuiFileDialog/ImGuiFileDialog.cpp.o
+.PHONY : ImGuiFileDialog/ImGuiFileDialog.cpp.o
+
+ImGuiFileDialog/ImGuiFileDialog.i: ImGuiFileDialog/ImGuiFileDialog.cpp.i
+.PHONY : ImGuiFileDialog/ImGuiFileDialog.i
+
+# target to preprocess a source file
+ImGuiFileDialog/ImGuiFileDialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_opengl_app.dir/build.make CMakeFiles/my_opengl_app.dir/ImGuiFileDialog/ImGuiFileDialog.cpp.i
+.PHONY : ImGuiFileDialog/ImGuiFileDialog.cpp.i
+
+ImGuiFileDialog/ImGuiFileDialog.s: ImGuiFileDialog/ImGuiFileDialog.cpp.s
+.PHONY : ImGuiFileDialog/ImGuiFileDialog.s
+
+# target to generate assembly for a file
+ImGuiFileDialog/ImGuiFileDialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_opengl_app.dir/build.make CMakeFiles/my_opengl_app.dir/ImGuiFileDialog/ImGuiFileDialog.cpp.s
+.PHONY : ImGuiFileDialog/ImGuiFileDialog.cpp.s
+
 imgui/imgui-master/backends/imgui_impl_glfw.o: imgui/imgui-master/backends/imgui_impl_glfw.cpp.o
 .PHONY : imgui/imgui-master/backends/imgui_impl_glfw.o
 
@@ -549,6 +573,9 @@ help:
 	@echo "... imgui"
 	@echo "... my_opengl_app"
 	@echo "... unit"
+	@echo "... ImGuiFileDialog/ImGuiFileDialog.o"
+	@echo "... ImGuiFileDialog/ImGuiFileDialog.i"
+	@echo "... ImGuiFileDialog/ImGuiFileDialog.s"
 	@echo "... imgui/imgui-master/backends/imgui_impl_glfw.o"
 	@echo "... imgui/imgui-master/backends/imgui_impl_glfw.i"
 	@echo "... imgui/imgui-master/backends/imgui_impl_glfw.s"

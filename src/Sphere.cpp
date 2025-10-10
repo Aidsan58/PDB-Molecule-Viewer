@@ -21,7 +21,7 @@
 // ---- Atom Static Methods ----
 float Atom::getAtomicRadius(const std::string& element, const std::unordered_map<std::string, float>& vanDerWaalsRadii) {
     auto it = vanDerWaalsRadii.find(element);
-    return (it != vanDerWaalsRadii.end()) ? it->second : 1.5f;
+    return (it != vanDerWaalsRadii.end()) ? it->second * 0.6f : 1.5f * 0.6f;
 }
 
 glm::vec3 Atom::getAtomColor(const std::string& element, const std::unordered_map<std::string, glm::vec3>& atomColors) {

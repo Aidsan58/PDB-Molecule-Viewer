@@ -11,6 +11,9 @@ add_subdirectory("/home/aidan/Programs/GLFW/glfw-3.4" "${CMAKE_BINARY_DIR}/glfw-
 # ASSIMP as subdirectory
 add_subdirectory("/home/aidan/Programs/assimp/" "${CMAKE_BINARY_DIR}/Assimp-build")
 
+# Add ImGuiFileDialog as subdirectory
+set(IMGUI_FILE_DIALOG_DIR ${CMAKE_CURRENT_SOURCE_DIR}/ImGuiFileDialog)
+
 # Add Dear Imgui
 set(IMGUI_DIR ${CMAKE_CURRENT_SOURCE_DIR}/imgui/imgui-master)
 
@@ -38,6 +41,7 @@ add_executable(my_opengl_app
     src/main.cpp
     src/Sphere.cpp
     src/stb_specs.cpp
+    ImGuiFileDialog/ImGuiFileDialog.cpp
 )
 
 # Link libraries

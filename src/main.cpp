@@ -5,12 +5,16 @@
 #include "imgui.h"
 #include "backends/imgui_impl_glfw.h"
 #include "backends/imgui_impl_opengl3.h"
+// ImGuiFileDialog
+#include "/home/aidan/Code/Projects/opengl-project/ImGuiFileDialog/ImGuiFileDialog.h"
 // GLFW
 #include <GLFW/glfw3.h>
 // GLM math library
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+// STB image loader
+#include "stb_image.h"
 // Standard library headers
 #include <string>
 #include <fstream>
@@ -23,18 +27,16 @@
 #include <unordered_map>
 // Shader class
 #include "shader.h"
-// STB image loader
-#include "stb_image.h"
 // Camera class
 #include "flyCamera.h"
 // Sphere class
 #include "Sphere.h"
 
-
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 void processInput(GLFWwindow *window);
+void drawGui();
 
 unsigned int loadTexture(const char *path);
 
@@ -178,12 +180,11 @@ int main() {
         // render
         glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
         ImGui_ImplOpenGL3_NewFrame();
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
-        ImGui::ShowDemoWindow();
-            
+        drawGui();
+                //ImGui::ShowDemoWindow();
         ourShader.use();
         // Setup camera matrices
         glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 1000.0f);
@@ -200,7 +201,7 @@ int main() {
         glfwSwapBuffers(window);
     }
 
-    // glfw: terminate, clearing all previously allocated GLFW resources.        
+    // glfw: terminate, clearing all previously allocated GLFW resources.
         ImGui_ImplOpenGL3_Shutdown();
         ImGui_ImplGlfw_Shutdown();
         ImGui::DestroyContext();
@@ -299,4 +300,28 @@ unsigned int loadTexture(char const * path)
     }
 
     return textureID;
+}
+
+// imgui file dialog
+void drawGui() { 
+  // open Dialog Simple
+  if (ImGui::Begin("##OpenDialogCommand")) {
+	  if (ImGui::Button("Open File Dialog")) {
+		const char *filters = "PDB files (*.pdb){.pdb},";
+          IGFD::FileDialogConfig config;config.path = ".";
+		ImGuiFileDialog::Instance()->OpenDialog("ChooseFileDlgKey", "Choose File", filters, config);
+	  }
+  ImGui::End();
+  }
+  // display
+  if (ImGuiFileDialog::Instance()->Display("ChooseFileDlgKey")) { // => will show a dialog
+    if (ImGuiFileDialog::Instance()->IsOk()) { // action if OK
+      std::string filePathName = ImGuiFileDialog::Instance()->GetFilePathName();
+      std::string filePath = ImGuiFileDialog::Instance()->GetCurrentPath();
+      // action
+    }
+    
+    // close
+    ImGuiFileDialog::Instance()->Close();
+  }
 }

@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/aidan/Code/Projects/opengl-project/ImGuiFileDialog/ImGuiFileDialog.cpp" "CMakeFiles/my_opengl_app.dir/ImGuiFileDialog/ImGuiFileDialog.cpp.o" "gcc" "CMakeFiles/my_opengl_app.dir/ImGuiFileDialog/ImGuiFileDialog.cpp.o.d"
   "/home/aidan/Code/Projects/opengl-project/src/Sphere.cpp" "CMakeFiles/my_opengl_app.dir/src/Sphere.cpp.o" "gcc" "CMakeFiles/my_opengl_app.dir/src/Sphere.cpp.o.d"
   "/home/aidan/Code/Projects/opengl-project/src/main.cpp" "CMakeFiles/my_opengl_app.dir/src/main.cpp.o" "gcc" "CMakeFiles/my_opengl_app.dir/src/main.cpp.o.d"
   "/home/aidan/Code/Projects/opengl-project/src/stb_specs.cpp" "CMakeFiles/my_opengl_app.dir/src/stb_specs.cpp.o" "gcc" "CMakeFiles/my_opengl_app.dir/src/stb_specs.cpp.o.d"
