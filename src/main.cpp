@@ -90,6 +90,9 @@ std::unordered_map<std::string, float> elementRadii = {
     {"MG", 1.73f},
 };
 
+// Instances is now a global variable so the functions can access it anywhere
+std::vector<SphereInstance> instances;
+
 int main() {
     // Instantiate GLFW window
     glfwInit();
@@ -140,7 +143,6 @@ int main() {
     // Sphere class
     Sphere sphere;
     
-    std::vector<SphereInstance> instances;
    
    
     // Render loop
@@ -162,7 +164,6 @@ int main() {
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
         drawGui();
-                //ImGui::ShowDemoWindow();
         ourShader.use();
         // Setup camera matrices
         glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 1000.0f);
@@ -283,6 +284,8 @@ unsigned int loadTexture(char const * path)
 
 // Parse PDB file
 void loadPDBFile(const std::string& filePath) {
+    std::cout << "Loading file: " << filePath << std::endl;
+    instances.clear();
     std::ifstream inputFile(filePath);
     std::string line;
     if (inputFile.is_open()) { // Check if the file opened successfully
@@ -301,6 +304,7 @@ void loadPDBFile(const std::string& filePath) {
                 instances.emplace_back(atom.position, radius, color);
             }
         }
+        std::cout << "Loaded " << instances.size() << " atoms" << std::endl;
         inputFile.close();
     } else {
         std::cerr << "Error: Unable to open file." << std::endl;
@@ -308,25 +312,27 @@ void loadPDBFile(const std::string& filePath) {
 }
 
 // imgui file dialog
-void drawGui() { 
-  // open Dialog Simple
-  if (ImGui::Begin("##OpenDialogCommand")) {
-	  if (ImGui::Button("Open File Dialog")) {
-		const char *filters = "PDB files (*.pdb){.pdb},";
-          IGFD::FileDialogConfig config;config.path = ".";
-		ImGuiFileDialog::Instance()->OpenDialog("ChooseFileDlgKey", "Choose File", filters, config);
-	  }
-  ImGui::End();
-  }
-  // display
-  if (ImGuiFileDialog::Instance()->Display("ChooseFileDlgKey")) { // => will show a dialog
-    if (ImGuiFileDialog::Instance()->IsOk()) { // action if OK
-      std::string filePathName = ImGuiFileDialog::Instance()->GetFilePathName();
-      std::string filePath = ImGuiFileDialog::Instance()->GetCurrentPath();
-      // action
+void drawGui() {
+    if (ImGui::Begin("##OpenDialogCommand")) {
+        if (ImGui::Button("Open File Dialog")) {
+            const char *filters = "PDB files (*.pdb){.pdb},";
+            IGFD::FileDialogConfig config;
+            config.path = ".";
+            ImGuiFileDialog::Instance()->OpenDialog("ChooseFileDlgKey", "Choose File", filters, config);
+        }
     }
-    
-    // close
-    ImGuiFileDialog::Instance()->Close();
-  }
+    ImGui::End();
+
+    // Handle file dialog
+    if (ImGuiFileDialog::Instance()->Display("ChooseFileDlgKey")) {
+        if (ImGuiFileDialog::Instance()->IsOk()) {
+            std::string filePathName = ImGuiFileDialog::Instance()->GetFilePathName();
+            std::cout << "Loaded file: " << filePathName << std::endl;
+            loadPDBFile(filePathName);
+        }
+        // Always close the dialog after Display()
+        ImGuiFileDialog::Instance()->Close();
+    }
+
 }
+
